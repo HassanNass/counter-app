@@ -1,3 +1,4 @@
+import './App.css'
 import { useState } from "react"
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
     <div className="container">
       <h1>Counter App</h1>
       <p>{count}</p>
-      <button className="increment" onClick={handleIncrement}>Increment</button>
-      <button className="decrement" onClick={handleDecrement}>Decrement</button>
-      <button className="reset" onClick={handleReset}>Reset</button>
+      <div className='buttons'>
+        <button className="increment" onClick={handleIncrement}>Increment</button>
+        <button className="decrement" onClick={handleDecrement}>Decrement</button>
+        <button className="reset" onClick={handleReset}>Reset</button>
+      </div>
     </div>
   )
 }
