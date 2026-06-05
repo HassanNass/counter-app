@@ -3,13 +3,25 @@ import { useState } from "react"
 function App() {
   const [count, setCount] = useState(0);
 
+  function handleIncrement() {
+    setCount(count + 1);
+  }
+
+  function handleDecrement() {
+    setCount(count > 0 ? count - 1 : 0);
+  }
+
+  function handleReset() {
+    setCount(0);
+  }
+
   return (
     <div className="container">
       <h1>Counter App</h1>
       <p>{count}</p>
-      <button className="increment" onClick={() => setCount(count + 1)}>Increment</button>
-      <button className="decrement" onClick={() => setCount(count - 1)}>Decrement</button>
-      <button className="reset" onClick={() => setCount(0)}>Reset</button>
+      <button className="increment" onClick={handleIncrement}>Increment</button>
+      <button className="decrement" onClick={handleDecrement}>Decrement</button>
+      <button className="reset" onClick={handleReset}>Reset</button>
     </div>
   )
 }
